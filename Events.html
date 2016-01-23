@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Hello React!</title>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<div id="content" style="background-color:red; color:black;"></div>
+
+<script type="text/jsx">
+
+	var Suzon = React.createClass({
+		
+		doSomething: function(){
+			  alert(  "Sexy and I know it " + this.props.children);
+			},
+		
+		render: function() {
+			return (
+						<div>
+							<h2>{this.props.user}</h2>
+							<a onClick={this.doSomething} href="#">Click Me</a>
+						</div>
+			      );
+			}
+		
+		});
+		
+		React.render(
+			<div>
+			
+			<Suzon user="Suzon">Zis is smart! Be like ZIS!</Suzon>
+			<Suzon user="Peash">Peash is stupid! Dont be like peash!</Suzon>
+			</div>, 
+		
+		document.getElementById('content'));
+
+</script>
+</body>
+</html>
